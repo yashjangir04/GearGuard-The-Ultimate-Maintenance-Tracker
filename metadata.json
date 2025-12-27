@@ -1,0 +1,5 @@
+{
+  "name": "GearGuard",
+  "description": "A comprehensive Maintenance Management System (CMMS) featuring role-based dashboards, equipment tracking, kanban workflows, and team management.",
+  "requestFramePermissions": []
+}
