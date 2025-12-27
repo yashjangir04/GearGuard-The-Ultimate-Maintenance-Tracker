@@ -1,7 +1,0 @@
-{
-  "name": "GearGuard: The Ultimate Maintenance Tracker",
-  "description": "A robust, Odoo-inspired maintenance management system for tracking assets, teams, and repair workflows with a professional dark theme.",
-  "requestFramePermissions": [
-    "camera"
-  ]
-}
