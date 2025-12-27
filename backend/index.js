@@ -1,16 +1,22 @@
-const express = require("express");
-const app = express();
-const env = require("dotenv");
+import express from "express";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 
-env.config();
+import connectDB from "./config/db.js";
 
-app.use(express.urlencoded({ urlencoded : true }));
+import userRoutes from "./routes/userRoutes.js";
+
+dotenv.config();
+const PORT= process.env.PORT || 8080;
+
+connectDB();
+
+const app= express();
+
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+app.use(cookieParser());
 
-app.get('/' , (req , res) => {
-    res.send("Hello there !");
-});
+app.use("/api/users", userRoutes);
 
-app.listen(process.env.PORT , () => {
-    console.log("Server running ✅");
-});
+app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
